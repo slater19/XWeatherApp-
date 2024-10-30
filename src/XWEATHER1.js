@@ -57,7 +57,7 @@ export const Search = ({searchData}) => {
 
   return (
     <div className='weather-display '>
-    {isLoading && <p>Loading weather data...</p>} 
+    {isLoading && <p>Loading data...</p>} 
     {!isLoading && weatherData && (
       <div className='weather-cards '>
         <WeatherCard data={`${weatherData.current.temp_c}C`} title="Temperature"  />
