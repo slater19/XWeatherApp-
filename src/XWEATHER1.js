@@ -8,7 +8,7 @@ export const Search = ({searchData}) => {
     searchData(city)
   };
   return (
-<div className='weather-card'>
+<div className='weather-search'>
  <input type="text"  placeholder="Enter city name" value={city} onChange={(e)=>setCity(e.target.value)} />
  <button onClick={searchData1}>Search</button>
  </div>
@@ -59,7 +59,7 @@ export const Search = ({searchData}) => {
     <div className='weather-display '>
     {isLoading && <p>Loading data...</p>} 
     {!isLoading && weatherData && (
-      <div className="weather-data">
+      <div className="weather-cards">
         <WeatherCard data={`${weatherData.current.temp_c}C`} title="Temperature"  />
         <WeatherCard data={`${weatherData.current.humidity}%`} title="Humidity"  />
         <WeatherCard data={`${weatherData.current.condition.text}`} title="Condition"  />
