@@ -1,0 +1,16 @@
+.weather-cards{}
+
+.weather-card{color: #000;
+border-radius: 5px;
+background-color: yellow;
+display: flex;
+justify-content: space-between;
+padding: 20px 50px;
+}
+
+.weather-data{}
+
+.weather-display{display: flex;
+flex-direction: column;
+background-color: aqua;
+}

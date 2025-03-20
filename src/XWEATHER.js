@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import styles from "./wether.css";
 
   
 const Search = ({searchData}) => {
   return (
-<div className='weather-card'></div>
+<div className='search'></div>
 
   )
 }
@@ -13,7 +14,7 @@ const Search = ({searchData}) => {
 
   const WeatherCard = ({title,data}) => {
     return (
-    <div className='weather-card'>
+    <div className={styles.weather-card}>
     <h3>{title}</h3>
     <p>{data}</p>
     </div>
@@ -48,15 +49,16 @@ const Search = ({searchData}) => {
         })}},[city])
 
   return (
-    <div className='weather-display '>
+    <div className={styles.weather-display}>  
     {isLoading && <p>Loading weather data...</p>} 
     {!isLoading && weatherData && (
-      <div className='weather-cards '>
+      <div className={styles.weather-data}>
+      <div className={styles.weather-cards}>
         <WeatherCard data={`${weatherData.current.temp}&degC`} title="Temperature"  />
         <WeatherCard data={`${weatherData.current.Humidity}`} title="Humidity"  />
         <WeatherCard data={`${weatherData.current.Condition}`} title="Condition"  />
         <WeatherCard data={`${weatherData.current.Wind }`} title="Wind Speed"  /></div>
-    )
+    </div>)
     }
     </div>
   )
