@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import "./wether.css";
 
   
 export const Search = ({searchData}) => {
@@ -59,11 +60,13 @@ export const Search = ({searchData}) => {
     <div className='weather-display '>
     {isLoading && <p>Loading data...</p>} 
     {!isLoading && weatherData && (
+      <div className="weather-data">
       <div className="weather-cards">
         <WeatherCard data={`${weatherData.current.temp_c}C`} title="Temperature"  />
         <WeatherCard data={`${weatherData.current.humidity}%`} title="Humidity"  />
         <WeatherCard data={`${weatherData.current.condition.text}`} title="Condition"  />
         <WeatherCard data={`${weatherData.current.wind_kph}`}kph title="Wind Speed"  /></div>
+   </div>
     )
     }
     </div>
