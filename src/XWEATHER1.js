@@ -57,11 +57,11 @@ export const Search = ({searchData}) => {
         })}},[city])
 
   return (
-    <div className='weather-display '>
+    <div className='weather-display'>
     {isLoading && <p>Loading data...</p>} 
     {!isLoading && weatherData && (
       <div className="weather-data">
-      <div className="weather-cards">
+      <div className="weather">
         <WeatherCard data={`${weatherData.current.temp_c}C`} title="Temperature"  />
         <WeatherCard data={`${weatherData.current.humidity}%`} title="Humidity"  />
         <WeatherCard data={`${weatherData.current.condition.text}`} title="Condition"  />
