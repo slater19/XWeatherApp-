@@ -61,7 +61,7 @@ export const Search = ({searchData}) => {
     {isLoading && <p>Loading data...</p>} 
     {!isLoading && weatherData && (
       <div className="weather-data">
-      <div className="weather">
+      <div className="weather-cards">
         <WeatherCard data={`${weatherData.current.temp_c}C`} title="Temperature"  />
         <WeatherCard data={`${weatherData.current.humidity}%`} title="Humidity"  />
         <WeatherCard data={`${weatherData.current.condition.text}`} title="Condition"  />
